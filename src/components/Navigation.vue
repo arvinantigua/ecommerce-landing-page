@@ -1,3 +1,7 @@
+<script setup>
+  import Cart from './Cart.vue'
+</script>
+
 <template>
   <nav class="navbar sticky-top navbar-light">
     <div class="container-fluid justify-content-between">
@@ -37,11 +41,19 @@
           </a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="#">
+          <button 
+            class="nav-link" 
+            type="button" 
+            id="shopping-cart" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+            <span>
             <img 
               alt="Shopping Cart Icon" 
-              src="@/assets/icons/bx_bx-shopping-bag.svg" />
-          </a>
+              src="@/assets/icons/bx_bx-shopping-bag.svg" /></span>
+            <span class="badge rounded-pill badge-notification bg-danger">2</span>
+          </button>
+          <Cart />
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link" href="#">
@@ -64,7 +76,6 @@
               src="@/assets/icons/bx_bx-search.svg" />
           </a>
         </li>
-
         <li class="nav-item mx-2 dropdown">
           <a
             class="nav-link dropdown-toggle"
